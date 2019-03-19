@@ -1,0 +1,15 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+Relay	KEYWORD1
+RelayManager	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin	KEYWORD2
+getState	KEYWORD2
+turnOn	KEYWORD2
+turnOff	KEYWORD2
+get	KEYWORD2
+add	KEYWORD2
