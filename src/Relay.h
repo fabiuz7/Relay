@@ -13,8 +13,8 @@ public:
 
 private:
     uint8_t pin;
-    bool state;
     bool normallyOpen;
+    bool state;
 };
 
 #endif // END _RELAY_H

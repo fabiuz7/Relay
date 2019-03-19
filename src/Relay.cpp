@@ -2,13 +2,13 @@
 
 void Relay::begin(){
 	pinMode(pin, OUTPUT);
+    digitalWrite(pin, state);
 }
 
 bool Relay::getState(){
 	if (normallyOpen){
 		return !state;
-	}
-	else {
+	} else {
 		return state;
 	}
 }
@@ -34,7 +34,6 @@ void Relay::turnOff(){
 	digitalWrite(pin, state);
 }
 
-Relay::Relay(uint8_t pin, bool isNormallyOpen){
-    this->pin = pin;
-    normallyOpen = isNormallyOpen;
+Relay::Relay(uint8_t pin, bool isNormallyOpen):
+        pin(pin), normallyOpen(isNormallyOpen), state(isNormallyOpen){
 }

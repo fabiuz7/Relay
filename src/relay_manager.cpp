@@ -27,6 +27,7 @@ bool RelayManager::add(String lightName, uint8_t pin, bool normallyOpen){
 #endif
   if(it==dla.end()){
     Relay* pRelay=new Relay(pin, normallyOpen);
+    pRelay->begin();
     dla.insert({lightName.c_str(), pRelay});
     return true;
   }else{
