@@ -1,24 +1,20 @@
-// Relay.h
-
-#ifndef _RELAY_h
-#define _RELAY_h
+#ifndef _RELAY_H
+#define _RELAY_H
 
 #include "Arduino.h"
   
-class Relay
-{
- protected:
-	 int pin;
-	 bool state;
-	 bool normallyOpen;
+class Relay {
+public:
+    Relay(uint8_t pin, bool isNormallyOpen = false);
+    void begin();
+    bool getState();
+    void turnOn();
+    void turnOff();
 
- public:
-	 Relay();
-	 Relay(int p, bool isNormallyOpen);
-	 void begin();
-	 bool getState();
-	 void turnOn();
-	 void turnOff();
+private:
+    uint8_t pin;
+    bool state;
+    bool normallyOpen;
 };
 
-#endif
+#endif // END _RELAY_H

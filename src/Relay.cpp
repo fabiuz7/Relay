@@ -1,12 +1,5 @@
 #include "Relay.h"
 
-Relay::Relay(){}
-
-Relay::Relay(int p, bool isNormallyOpen){
-	pin = p;
-	normallyOpen = isNormallyOpen;
-}
-
 void Relay::begin(){
 	pinMode(pin, OUTPUT);
 }
@@ -29,6 +22,7 @@ void Relay::turnOn(){
 	}
 	digitalWrite(pin, state);
 }
+
 void Relay::turnOff(){
 	if (normallyOpen){
 		if (state == !false) return;
@@ -38,4 +32,9 @@ void Relay::turnOff(){
 		state = false;
 	}
 	digitalWrite(pin, state);
+}
+
+Relay::Relay(uint8_t pin, bool isNormallyOpen){
+    this->pin = pin;
+    normallyOpen = isNormallyOpen;
 }
